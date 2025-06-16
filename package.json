@@ -2,18 +2,20 @@
   "name": "fname-registry",
   "version": "0.1.0",
   "description": "fname authority",
-  "main": "build/index.js",
   "type": "module",
+  "main": "build/index.js",
   "license": "MIT",
+
   "scripts": {
-    "ts-node": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true node --experimental-specifier-resolution=node --loader ts-node/esm",
     "start": "npm run ts-node src/index.ts",
+    "ts-node": "TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true node --experimental-specifier-resolution=node --loader ts-node/esm",
     "build": "rm -rf ./build && tsc --project ./tsconfig.json",
     "test": "NODE_OPTIONS='--no-warnings --experimental-vm-modules' ENVIRONMENT=test jest --detectOpenHandles --forceExit",
     "lint": "eslint . --ext .ts",
-    "abi": "typechain --node16-modules --target ethers-v6 --out-dir src/abi src/abi/*.abi",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "abi": "typechain --node16-modules --target ethers-v6 --out-dir src/abi src/abi/*.abi"
   },
+
   "dependencies": {
     "@chainlink/ccip-read-server": "^0.2.1",
     "@farcaster/hub-nodejs": "^0.13.6",
@@ -31,6 +33,7 @@
     "postgres": "^3.4.7",
     "viem": "^2.31.0"
   },
+
   "devDependencies": {
     "@typechain/ethers-v6": "^0.5.1",
     "@types/express": "^5.0.1",
